@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 enum ColorSelection {
-  deepPurpe('Deep Purple', Colors.deepPurple),
-  purple('Purple', Colors.purple),
-  indigo('Indigo', Colors.indigo),
-  blue('Blue', Colors.blue),
-  teal('Teal', Colors.teal),
-  green('Green', Colors.green),
-  yellow('Yellow', Colors.yellow),
-  orange('Orange', Colors.orange),
-  deepOrange('Deep Orange', Colors.deepOrange),
-  pink('Pink', Colors.pink);
+  deepPurple('Deep Purple', Colors.deepPurple),
+  pink('Pink', Colors.pink),
+  indigo("Indigo", Colors.indigo),
+  green("Green", Colors.green),
+  blue("Blue", Colors.blue),
+  yellow("Yellow", Colors.yellow),
+  orange("Orange", Colors.orange),
+  deepOrange("Deep Orange", Colors.deepOrange),
+  teal("Teal", Colors.teal);
 
   const ColorSelection(this.label, this.color);
 

@@ -1,0 +1,20 @@
+target users 
+--- staff members 
+--- restuarant staff
+--- delivery personnel 
+--- restuarant admin
+
+requirememnts
+--- internet connection: detect if the mobile is connected
+--- 3rd party payment gateway (easy pay / paygate)
+--- account registrations
+--- add/ edit and remove menu items
+--- each item has name, description and price
+--- categorize menues
+--- browse windows and select multiple items
+--- card and checkout
+--- oncampus delivery or pick up options
+--- review and rating section for food items
+--- track the user transactions
+ 
+

@@ -1,25 +1,62 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
+import 'home.dart';
 
 void main() {
   runApp(const Yummy());
 }
 
-class Yummy extends StatelessWidget {
+class Yummy extends StatefulWidget {
   const Yummy({super.key});
 
   @override
+  State<Yummy> createState() => _YummyState();
+}
+
+class _YummyState extends State<Yummy> {
+  ThemeMode themeMode = ThemeMode.light;
+  ColorSelection colorSelected = ColorSelection.pink;
+
+  void changeThemeMode(bool useLightMode) {
+    setState(() {
+      themeMode =
+          useLightMode
+              ? ThemeMode
+                  .light //
+              : ThemeMode.dark;
+    });
+  }
+
+  void changeColor(int value) {
+    setState(() {
+      colorSelected = ColorSelection.values[value];
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    const appName = "Yummy";
+    const appTitle = 'Yummy';
+
     return MaterialApp(
-      title: appName,
-      home: Scaffold(
-        appBar: AppBar(
-          elevation: 4.0,
-          title: const Text(appName, style: TextStyle(fontSize: 24)),
-        ),
-        body: const Center(
-          child: Text("You Hungry? ", style: TextStyle(fontSize: 30.0)),
-        ),
+      title: appTitle,
+      debugShowCheckedModeBanner: false, // Uncomment to remove Debug banner
+      themeMode: themeMode,
+      theme: ThemeData(
+        colorSchemeSeed: colorSelected.color,
+        useMaterial3: true,
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        colorSchemeSeed: colorSelected.color,
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      ),
+      home: Home(
+        appTitle: appTitle, //todo: stef delete this?
+
+        changeTheme: changeThemeMode,
+        changeColor: changeColor,
+        colorSelected: colorSelected,
       ),
     );
   }
